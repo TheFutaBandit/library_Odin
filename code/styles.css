@@ -65,13 +65,19 @@
     margin-bottom: 30px;
   }
 
-  .container .card {
+  .container .book {
     height: 100%;
     width: 100%;
     border: 1px solid red;
+    display: flex;
+    flex-direction: column;
   }
 
-  
+  .book > * {
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+
 
 
   
