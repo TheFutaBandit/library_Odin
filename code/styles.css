@@ -1,0 +1,79 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+  html {
+    height: 100%
+  }
+  body {
+    border: 1px solid blue;
+    min-height: 100%;
+
+  }
+  :root {
+    --box-size-height: 160px;
+  }
+  
+  .container {
+    min-height: 100vh; /* fix this afterwards */
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .container .header {
+    font-family: "Barlow Condensed";
+    font-weight: 900;
+    font-size: 30px;
+  }
+  
+  .container .add-button {
+    
+  }
+  
+  .container .library {
+    padding: 20px;
+    grid-gap: 20px;
+    border: 1px solid black;
+    min-height: 200px;
+    width: 800px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--box-size-height),1fr));
+    grid-auto-rows: var(--box-size-height);
+    margin-bottom: 30px;
+  }
+
+  .container .card {
+    height: 100%;
+    width: 100%;
+    border: 1px solid red;
+  }
+
+  
+
+
+  
+  
+  
