@@ -2,6 +2,8 @@
 const container = document.querySelector('.container')
 const header = container.querySelector('.header')
 const library = container.querySelector('.library')
+const addButton = container.querySelector('.add-button')
+const modal = addButton.querySelector('.book-modal');
 // const bookItem = library.querySelector('.book')
 
 //Objects
@@ -50,6 +52,12 @@ for(let i = 0; i < myLibrary.length; i++) {
     fillBook(bookItem,myLibrary[i]);
     library.appendChild(bookItem);
 }
+
+addButton.addEventListener('click', () => {
+    modal.showModal();
+})
+
+
 
 
 
