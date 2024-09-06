@@ -4,6 +4,7 @@ const header = container.querySelector('.header')
 const library = container.querySelector('.library')
 const addButton = container.querySelector('.add-button')
 const modal = addButton.querySelector('.book-modal');
+const book_form = modal.querySelector('#book-submission')
 // const bookItem = library.querySelector('.book')
 
 //Objects
