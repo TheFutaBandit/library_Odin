@@ -46,14 +46,29 @@ function setBookStatus(parentNode,nodeName,bookObj) {
     })
 }
 
-function setBookDelete(parentNode,nodeName,bookItem) {
+function removeBookFromArray(idx) {
+    myLibrary.splice(idx,1);
+    let index = 0;
+    for(const item of library.children) {
+        // console.log(item);
+        item.setAttribute("data-index",index);
+        index += 1;
+    }
+}
+
+
+function setBookDelete(parentNode,nodeName,bookObj,bookItem) {
     const element = document.createElement("button");
     element.classList.add(nodeName);
     element.textContent = "delete";
     parentNode.appendChild(element);
 
+
     element.addEventListener("click", () => {
         library.removeChild(bookItem);
+        let idx = bookItem.dataset.index;
+        // console.log(bookItem.dataset.index)
+        removeBookFromArray(idx)
     })
 }
 
@@ -62,7 +77,7 @@ function fillBook(bookItem,bookObj) {
     setBookAttribute(bookItem,"book_author",bookObj);
     setBookAttribute(bookItem,"book_pages",bookObj);
     setBookStatus(bookItem,"book_status",bookObj);
-    setBookDelete(bookItem,"book_delete",bookItem);
+    setBookDelete(bookItem,"book_delete",bookObj,bookItem);
 }
 
 // function addDeleteEvent(bookItem,bookObject) {
@@ -76,6 +91,8 @@ function libraryDisplay(bookObject) {
 
     const bookItem = document.createElement("div");
     bookItem.classList.add("book");
+    
+    bookItem.setAttribute('data-index', myLibrary.indexOf(bookObject));
     fillBook(bookItem,bookObject);
     library.appendChild(bookItem);
 
@@ -90,8 +107,12 @@ function libraryDisplay(bookObject) {
 //bootup    
 
 let book1 = new book("gooning","pokimane",69);
+let book2 = new book("gooning","pokimane",69);
 
 addBookToLibrary(book1);
+addBookToLibrary(book2);
+
+
 
 
 for(let i = 0; i < myLibrary.length; i++) {
