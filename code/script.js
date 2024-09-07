@@ -32,17 +32,29 @@ function setBookAttribute(parentNode,nodeName,bookObj) {
 }
 
 function setBookStatus(parentNode,nodeName,bookObj) {
-    const element = document.createElement("button")
-    element.classList.add(nodeName)
-    element.textContent = "not-read"
-    parentNode.appendChild(element)
+    const element = document.createElement("button");
+    element.classList.add(nodeName);
+    element.textContent = "not-read";
+    parentNode.appendChild(element);
+
+    let flag = false;
+
+    element.addEventListener("click", (event) => {
+        flag = !flag;
+        if(flag == true) element.textContent = "read";
+        else element.textContent = "not-read";
+    })
 }
 
-function setBookDelete(parentNode,nodeName,bookObj) {
+function setBookDelete(parentNode,nodeName,bookItem) {
     const element = document.createElement("button");
     element.classList.add(nodeName);
     element.textContent = "delete";
     parentNode.appendChild(element);
+
+    element.addEventListener("click", () => {
+        library.removeChild(bookItem);
+    })
 }
 
 function fillBook(bookItem,bookObj) {  
@@ -50,15 +62,15 @@ function fillBook(bookItem,bookObj) {
     setBookAttribute(bookItem,"book_author",bookObj);
     setBookAttribute(bookItem,"book_pages",bookObj);
     setBookStatus(bookItem,"book_status",bookObj);
-    setBookDelete(bookItem,"book_delete",bookObj);
+    setBookDelete(bookItem,"book_delete",bookItem);
 }
 
-function addDeleteEvent(bookItem,bookObject) {
-    const tt = bookItem.querySelector(".book_delete");
-    tt.addEventListener("click", (event) => {
-        library.removeChild(bookItem)
-    })
-}
+// function addDeleteEvent(bookItem,bookObject) {
+//     const tt = bookItem.querySelector(".book_delete");
+//     tt.addEventListener("click", (event) => {
+//         library.removeChild(bookItem)
+//     })
+// }
 
 function libraryDisplay(bookObject) {
 
@@ -67,7 +79,7 @@ function libraryDisplay(bookObject) {
     fillBook(bookItem,bookObject);
     library.appendChild(bookItem);
 
-    addDeleteEvent(bookItem,bookObject);
+    // addDeleteEvent(bookItem,bookObject);
 }
 
 
