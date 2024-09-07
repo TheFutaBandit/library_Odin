@@ -127,7 +127,7 @@ book_form.addEventListener("submit", (event) => {
     event.preventDefault();
     const form_data = new FormData(book_form);
     const book_data = Object.fromEntries(form_data)
-    const bookInput = new book(book_data["book_name"],book_data["book_author"],book_data["book_pages"],book_data["book_status"]);
+    const bookInput = new book(book_data["book_name"],book_data["book_author"],book_data["book_pages"]);
 
     addBookToLibrary(bookInput);
     libraryDisplay(bookInput);
