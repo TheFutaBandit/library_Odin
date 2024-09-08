@@ -40,18 +40,73 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    background-color: #cca98d;
+    gap: 20px;
+    padding: 0px;
   }
+
+
   
   .container .header {
     font-family: "Barlow Condensed";
+    /* color: blue; */
     font-weight: 900;
-    font-size: 30px;
+    font-size: 50px;
+    color: #f7e7ce;
+    line-height: 1;
   }
+
+  .header p {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
   
   .container .add-button {
-    
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 500;
   }
+
+  .add-button button {
+    min-width: 165px;
+    min-height: 30px;
+    border-style: none;
+    font-weight: 500;
+    color:#f7e7ce;
+    background-color: #9f624f;
+    border-radius: 3px;
+    font-size: 20px;
+  }
+
+  .add-button .book-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 5px;
+  }
+
+  
+
+  #book-submission {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #book-submission > *{
+    display: flex;
+    gap: 5px;
+  }
+
+  #book-submission label {
+    min-width: 80px;
+  }
+
+
   
   .container .library {
     padding: 20px;
@@ -63,19 +118,80 @@
     grid-template-columns: repeat(auto-fill, minmax(var(--box-size-height),1fr));
     grid-auto-rows: var(--box-size-height);
     margin-bottom: 30px;
+    background-color: #9f624f;
   }
 
   .container .book {
     height: 100%;
     width: 100%;
-    border: 1px solid red;
+    background-color: #f7e7ce;
+    /* border: 1px solid blue; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+    font-family: "Barlow Condensed",sans-serif;
+
+    color: #59372b;
+    /* background-color: #F6BD60; */
+  }
+
+  
+
+  .book .book_name {
+    font-size: 1.4em;
+    font-weight: 700;
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+
+  .book .book_author {
+    margin-top: -6px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .book .book_pages {
+    margin-bottom: 2px;
+  }
+
+  .book button {
+    min-width: 100px;
+    
+  }
+
+  .book .book_delete {
+    align-self: center;
+    justify-self: end;
+  }
+
+  .book .book_status {
+    align-self: center;
   }
 
   .book > * {
     box-sizing: border-box;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+
+  .book button {
+    border-style: none;
+    font-weight: 500;
+    color:#f7e7ce;
+    background-color: #9f624f;
+    border-radius: 3px;
+  }
+
+  button:hover {
+    box-shadow: 2px 2px 4px 1px rgba(89, 55, 43, 0.2);
   }
 
 

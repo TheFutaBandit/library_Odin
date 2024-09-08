@@ -34,15 +34,15 @@ function setBookAttribute(parentNode,nodeName,bookObj) {
 function setBookStatus(parentNode,nodeName,bookObj) {
     const element = document.createElement("button");
     element.classList.add(nodeName);
-    element.textContent = "not-read";
+    element.textContent = "Not-Read";
     parentNode.appendChild(element);
 
     let flag = false;
 
     element.addEventListener("click", (event) => {
         flag = !flag;
-        if(flag == true) element.textContent = "read";
-        else element.textContent = "not-read";
+        if(flag == true) element.textContent = "Read";
+        else element.textContent = "Not-Read";
     })
 }
 
@@ -60,7 +60,7 @@ function removeBookFromArray(idx) {
 function setBookDelete(parentNode,nodeName,bookObj,bookItem) {
     const element = document.createElement("button");
     element.classList.add(nodeName);
-    element.textContent = "delete";
+    element.textContent = "Delete";
     parentNode.appendChild(element);
 
 
@@ -106,8 +106,8 @@ function libraryDisplay(bookObject) {
 
 //bootup    
 
-let book1 = new book("gooning","pokimane",69);
-let book2 = new book("gooning","pokimane",69);
+let book1 = new book("The Alchemist","Paulo Coehlo",69);
+let book2 = new book("Gooning","Pokimane",69);
 
 addBookToLibrary(book1);
 addBookToLibrary(book2);

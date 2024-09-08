@@ -18,15 +18,20 @@
       <button class = "add">Add Book</button>
       <dialog class = "book-modal">
         <form id = "book-submission" method = "dialog">
-          <label for = "book_input_name">book name:</label>
-          <input id = "book_input_name" name = "book_name" type = "text" placeholder = "Enter Book Name">
+          <div class = "book_name_section">
+            <label for = "book_input_name">Book name:</label>
+            <input id = "book_input_name" name = "book_name" type = "text" placeholder = "Enter Book Name" required>
+          </div>
 
-          <label for = "book_input_author">book author:</label>
-          <input id = "book_input_author" name = "book_author" type = "text" placeholder = "Enter Author Name">
+          <div class = "book_author_section">
+            <label for = "book_input_author">Book author:</label>
+            <input id = "book_input_author" name = "book_author" type = "text" placeholder = "Enter Author Name" required>
+          </div>
 
-          <label for = "book_input_pages">book pages:</label>
-          <input id = "book_input_pages" name = "book_pages" type = "number">
-
+          <div class = "book_pages_section">
+            <label for = "book_input_pages">Book pages:</label>
+            <input id = "book_input_pages" name = "book_pages" type = "number" required>
+          </div>
           <input type = "submit"></input>
         </form>
       </dialog>
